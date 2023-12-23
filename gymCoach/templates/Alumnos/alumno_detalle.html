@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block contenido %}
+
+<h1>Alumno Detalle</h1>   
+<p>Nombre: <i>{{alumno.nombre}}</i></p>
+<p>Objetivo: <i>{{alumno.objetivo}}</i></p>
+
+<p>
+    <a href="{% url 'alumnos lista' %}">Regresar</a>
+</p>
+
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block contenido %}
+
+    <h1 class="p-8">Agregar ejercicio</h1>
+    <br>
+    <form action="" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit"></input>
+
+      </form>
+      <a href="{% url 'ejercicios lista' %}">Volver a la lista de ejercicios</a>
+    
+{% endblock %}

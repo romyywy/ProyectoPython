@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block contenido %}
+
+    <h1 class="p-8">Agregar alumno</h1>
+    <br>
+    <form action="" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit"></input>
+
+      </form>
+      <a href="{% url 'alumnos lista' %}">Volver a la lista de alumnos</a>
+    
+{% endblock %}

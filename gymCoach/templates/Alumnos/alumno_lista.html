@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block contenido %}
+
+    <h1 class="p-8">Lista de alumnos</h1>
+    <br>
+
+    <a href="{% url 'alumnos lista' %}">Alumnos</a>
+        {% for alumno in alumnos %}
+            <li>Nombre: {{alumno.nombre}}
+                <p>
+                    <a href="{% url 'alumnos detalle' alumno.pk %}">Ver</a>
+                    <a href="{% url 'alumnos editar' alumno.pk %}">Editar</a>
+                    <a href="{% url 'alumnos eliminar' alumno.pk %}">Eliminar</a>
+                </p>
+            </li>
+
+        
+        {% endfor %}
+
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block contenido %}
+
+    <h1 class="p-8">Lista de usuarios</h1>
+    <br>
+
+    <a href="{% url 'usuarios lista' %}">Alumnos</a>
+        {% for usuario in usuarios %}
+            <li>
+                Nombre: {{usuario.usuario}}
+                Rol: {{usuario.rol}}
+               
+            </li>
+
+        
+        {% endfor %}
+      
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block contenido %}
+
+    <h1 class="p-8">Editar ejercicio</h1>
+    <br>
+    <form action="" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Editar">
+
+      </form>
+    
+{% endblock %}

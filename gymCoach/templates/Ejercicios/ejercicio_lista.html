@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block contenido %}
+
+    <h1 class="p-8">Lista de ejercicios</h1>
+    <br>
+
+    <a href="{% url 'ejercicios lista' %}">Ejercicios</a>
+        {% for ejercicio in ejercicios %}
+            <li>
+                Nombre: {{ejercicio.nombre}}
+                Grupo muscular: {{ejercicio.grupo_muscular}}
+
+                <p>
+                    <a href="{% url 'ejercicios detalle' ejercicio.pk %}">Ver</a>
+                    <a href="{% url 'ejercicios editar' ejercicio.pk %}">Editar</a>
+                    <a href="{% url 'ejercicios eliminar' ejercicio.pk %}">Eliminar</a>
+                </p>
+            </li>
+
+        
+        {% endfor %}
+
+        <a href="{% url 'ejercicios crear' %}">Registrar nuevo ejercicio</a>
+
+{% endblock %}
