@@ -9,15 +9,31 @@
 
     <a href="{% url 'alumnos lista' %}">Alumnos</a>
         {% for alumno in alumnos %}
-            <li>Nombre: {{alumno.nombre}}
+        <div class="">
+            <li>
+                Nombre: {{alumno.nombre}}
                 <p>
-                    <a href="{% url 'alumnos detalle' alumno.pk %}">Ver</a>
-                    <a href="{% url 'alumnos editar' alumno.pk %}">Editar</a>
-                    <a href="{% url 'alumnos eliminar' alumno.pk %}">Eliminar</a>
+                    <ul class="list-group list-group-horizontal">
+                        <li class="list-group-item">
+                            <a href="{% url 'alumnos detalle' alumno.pk %}">Ver</a>
+
+                        </li>  
+                        <li class="list-group-item">
+                            <a href="{% url 'alumnos editar' alumno.pk %}">Editar</a>
+                        </li>
+                        
+                        <li class="list-group-item">
+                            
+                            <a href="{% url 'alumnos eliminar' alumno.pk %}">Eliminar</a>
+
+                        </li>
+
+                    </ul>
+                                      
                 </p>
             </li>
-
+        </div>
+            
         
         {% endfor %}
-
 {% endblock %}

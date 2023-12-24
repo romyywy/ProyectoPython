@@ -6,8 +6,6 @@ urlpatterns = [
     path('alumnos_lista/',AlumnoListview.as_view(), name='alumnos lista'),
     path('alumnos_crear/',AlumnoCreateview.as_view(), name='alumnos crear'),
     path('alumnos_editar/<pk>',AlumnoUpdateView.as_view(), name='alumnos editar'),
-    path('alumnos_eliminar/<pk>',AlumnoDeleteView.as_view(), name='alumnos eliminar'),
     path('alumnos_detalle/<pk>',AlumnoDetailView.as_view(), name='alumnos detalle'),
-
-
+    path('alumnos_eliminar/<pk>',AlumnoDeleteView.as_view(), name='alumnos eliminar'),
 ]

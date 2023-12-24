@@ -62,9 +62,10 @@ class UsuarioListview(ListView):
     
 
 #logout
-class Logout(LogoutView):
-    template_name = "usuarios/logout.html"
-    
+class Logoutview(LogoutView):
+    template_name = "usuarios/logged_out.html"
+    #next_page = reverse_lazy('principal')  # Redirect to the home page after logout
+
 
 #a un usuario ya registrado, configurar su informacion
 class PerfilUsuarioCreateView(LoginRequiredMixin, CreateView):
