@@ -8,9 +8,8 @@
 <p>Nombre: <i>{{ejercicio.nombre}}</i></p>
 <p>Descripcion: <i>{{ejercicio.descripcion}}</i></p>
 <p>Grupo muscular target: <i>{{ejercicio.grupo_muscular}}</i></p>
+<img src="{{ ejercicio.imagen.url }}" alt="" height="100px">
 
-<p>
-    <a href="{% url 'ejercicios lista' %}">Regresar</a>
-</p>
+
 
 {% endblock %}

@@ -7,33 +7,45 @@
     <h1 class="p-8">Lista de alumnos</h1>
     <br>
 
-    <a href="{% url 'alumnos lista' %}">Alumnos</a>
-        {% for alumno in alumnos %}
-        <div class="">
-            <li>
-                Nombre: {{alumno.nombre}}
-                <p>
-                    <ul class="list-group list-group-horizontal">
-                        <li class="list-group-item">
-                            <a href="{% url 'alumnos detalle' alumno.pk %}">Ver</a>
+    <a href="{% url 'alumnos crear' %}">Registrar nuevo alumno</a>
 
-                        </li>  
-                        <li class="list-group-item">
-                            <a href="{% url 'alumnos editar' alumno.pk %}">Editar</a>
-                        </li>
+    <div class="d-flex justify-content-center">
+        <table class="table table-sm w-auto">
+            <thead>
+              <tr>
+                <th scope="col">Nombre</th>
+                <th scope="col">Objetivo</th>
+                <th scope="col"></th>
+              </tr>
+            </thead>
+
+            <tbody>
+                {% for alumno in alumnos %}
+
+              <tr>
+                <td> {{alumno.nombre}}</td>
+                <td>{{alumno.objetivo}}</td>
+                <td><ul class="list-group list-group-horizontal">
+                    <li class="list-group-item">
+                        <a href="{% url 'alumnos detalle' alumno.pk %}">Ver</a>
+
+                    </li>  
+                    <li class="list-group-item">
+                        <a href="{% url 'alumnos editar' alumno.pk %}">Editar</a>
+                    </li>
+                    
+                    <li class="list-group-item">
                         
-                        <li class="list-group-item">
-                            
-                            <a href="{% url 'alumnos eliminar' alumno.pk %}">Eliminar</a>
+                        <a href="{% url 'alumnos eliminar' alumno.pk %}">Eliminar</a>
 
-                        </li>
+                    </li>
 
-                    </ul>
-                                      
-                </p>
-            </li>
+                </ul></td>
+              </tr>
+            </tbody>
+            {% endfor %}
+
+          </table>
         </div>
-            
-        
-        {% endfor %}
+
 {% endblock %}

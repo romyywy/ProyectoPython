@@ -36,14 +36,15 @@ class EjercicioCreateview(LoginRequiredView,CreateView):
     model= Ejercicio
     template_name= "Ejercicios/ejercicio_crear.html"
     success_url = reverse_lazy('ejercicios lista')
-    fields=['nombre','descripcion', 'grupo_muscular']
+    fields=['nombre','descripcion', 'grupo_muscular','imagen']
+
 
 #UPDATE
 class EjercicioUpdateView(LoginRequiredView,UpdateView):
     model= Ejercicio
     template_name= "Ejercicios/ejercicio_editar.html"
     success_url = reverse_lazy('ejercicios lista')
-    fields=['nombre','descripcion','grupo_muscular']
+    fields=['nombre','descripcion','grupo_muscular','imagen']
 
 #DELETE
 class EjercicioDeleteView(LoginRequiredView,DeleteView):

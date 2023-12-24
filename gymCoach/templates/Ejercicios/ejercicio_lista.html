@@ -5,24 +5,49 @@
 {% block contenido %}
 
     <h1 class="p-8">Lista de ejercicios</h1>
+    <h3>Aquí encontrarás todos la información para poder armar tus rutinas de entrenamiento</h3>
     <br>
 
-    <a href="{% url 'ejercicios lista' %}">Ejercicios</a>
-        {% for ejercicio in ejercicios %}
-            <li>
-                Nombre: {{ejercicio.nombre}}
-                Grupo muscular: {{ejercicio.grupo_muscular}}
+    <div class="d-flex justify-content-center">
+        <table class="table table-sm w-auto">
+            <thead>
+              <tr>
+                <th scope="col">Nombre</th>
+                <th scope="col">Músculo trabajado</th>
+                <th scope="col"></th>
+              </tr>
+            </thead>
 
-                <p>
-                    <a href="{% url 'ejercicios detalle' ejercicio.pk %}">Ver</a>
-                    <a href="{% url 'ejercicios editar' ejercicio.pk %}">Editar</a>
-                    <a href="{% url 'ejercicios eliminar' ejercicio.pk %}">Eliminar</a>
-                </p>
-            </li>
+            <tbody>
+            {% for ejercicio in ejercicios %}
 
-        
-        {% endfor %}
+              <tr>
+                <td> {{ejercicio.nombre}}</td>
+                <td>{{ejercicio.grupo_muscular}}</td>
+                <td><ul class="list-group list-group-horizontal">
+                    <li class="list-group-item">
+                        <a href="{% url 'ejercicios detalle' ejercicio.pk %}">Ver</a>
 
+                    </li>  
+                    <li class="list-group-item">
+                        <a href="{% url 'ejercicios editar' ejercicio.pk %}">Editar</a>
+                    </li>
+                    
+                    <li class="list-group-item">
+                        
+                        <a href="{% url 'ejercicios eliminar' ejercicio.pk %}">Eliminar</a>
+
+                    </li>
+
+                </ul></td>
+              </tr>
+            </tbody>
+            {% endfor %}
+
+          </table>
+        </div>
+
+   
         <a href="{% url 'ejercicios crear' %}">Registrar nuevo ejercicio</a>
 
 {% endblock %}

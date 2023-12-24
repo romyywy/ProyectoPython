@@ -4,18 +4,30 @@
 
 {% block contenido %}
 
-    <h1 class="p-8">Lista de usuarios</h1>
+    <h1 class="p-8">Lista de coaches</h1>
     <br>
+    <div class="d-flex justify-content-center">
+        <table class="table table-sm w-auto">
+            <thead>
+              <tr>
+                <th scope="col">Nombre</th>
+                <th scope="col">Rol</th>
+              </tr>
+            </thead>
 
-    <a href="{% url 'usuarios lista' %}">Alumnos</a>
-        {% for usuario in usuarios %}
-            <li>
-                Nombre: {{usuario.usuario}}
-                Rol: {{usuario.rol}}
-               
-            </li>
+            <tbody>
+                {% for usuario in usuarios %}
 
-        
-        {% endfor %}
+              <tr>
+                <td> {{usuario.usuario}}</td>
+                <td>{{usuario.rol}}</td>
+              </tr>
+            </tbody>
+            {% endfor %}
+
+          </table>
+        </div>
+       
+
       
 {% endblock %}

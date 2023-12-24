@@ -6,7 +6,7 @@
 
     <h1 class="p-8">Agregar ejercicio</h1>
     <br>
-    <form action="" method="post">
+    <form action="" method="post" enctype="multipart/form-data">
         {% csrf_token %}
         {{ form.as_p }}
         <input type="submit"></input>
@@ -15,3 +15,5 @@
       <a href="{% url 'ejercicios lista' %}">Volver a la lista de ejercicios</a>
     
 {% endblock %}
+
+
